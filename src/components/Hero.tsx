@@ -30,9 +30,9 @@ function Hero() {
         }
       `}</style>
 
-      <section className="relative bg-white pt-10 mt-[80px] mb-[60px] lg:min-h-screen lg:pt-20 lg:mt-[50px] lg:mb-[10px]">
+      <section className="relative bg-white pt-10 mt-[80px] mb-[60px] lg:min-h-screen lg:pt-20 lg:mt-[50px] lg:mb-[10px] bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url(https://i.pinimg.com/736x/45/0f/9f/450f9fa40cba709542129b1d0d60247c.jpg)'}}>
         <div className="w-full flex flex-col lg:flex-row items-center justify-center mt-[15px] lg:mt-[30px] mb-[10px] lg:mb-[10px] px-4 lg:px-0 gap-5 lg:gap-[20px]">
-          <div className="w-full lg:w-1/2 px-2 lg:px-20 lg:ml-[65px]  flex flex-col justify-center min-h-[400px] lg:min-h-[452px]">
+          <div className="w-full lg:w-1/2 px-2 lg:px-20 lg:ml-[75px]  flex flex-col justify-center min-h-[400px] lg:min-h-[452px]">
             <h1 className="text-[28px] sm:text-[30px] lg:text-[32px] text-gray-900 font-semibold leading-tight animate-fade-in-up">
               Redefine Your Style With Racan
               <br />
@@ -42,10 +42,8 @@ function Hero() {
               <br />
               Ecommerce
             </h1>
-            <p className="font-mono text-gray-600 text-[16px] sm:text-[17px] lg:text-[18px] mt-6 max-w-xl animate-fade-in-up animation-delay-300">
-              Experience the future of fashion with AI-powered Fashion assistant
-              Ecommerce,personalized recommendations that match your unique
-              taste.
+            <p className="font-mono text-gray-800 text-[16px] sm:text-[17px] lg:text-[18px] mt-6 max-w-xl animate-fade-in-up animation-delay-300">
+            Experience the future of fashion with AI-powered Fashion assistant Ecommerce,personalized recommendations that match your unique taste.
             </p>
             <a
               href="#"
