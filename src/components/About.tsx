@@ -10,8 +10,8 @@ const About: React.FC = () => {
               <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#004AAD] font-semibold mb-6 font-manrope">
                 About Racan AI
               </h2>
-
-              <p className="text-lg md:text-xl leading-relaxed text-gray-800 mb-8">
+              
+              <p className="text-base md:text-xl leading-relaxed text-gray-900 mb-8">
                 <span className="font-normal text-[#004AAD]">Racan AI</span> is
                 a revolutionary fashion assistant that combines artificial
                 intelligence with e-commerce to transform your shopping
@@ -19,7 +19,7 @@ const About: React.FC = () => {
                 preferences, body type, and fashion needs to provide
                 personalized recommendations.
               </p>
-
+              
               <a
                 href="#"
                 className="inline-block bg-[#004AAD] text-white px-8 py-4 rounded-full hover:bg-[#d70153] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
@@ -27,9 +27,9 @@ const About: React.FC = () => {
                 Learn More
               </a>
             </div>
-
+            
             <div className="order-1 md:order-2">
-              <div className="relative w-full max-w-[455px] h-[600px] sm:h-[560px] md:h-[600px] mx-auto overflow-hidden rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-700">
+              <div className="relative w-full max-w-[360px] h-[480px] sm:max-w-[360px] sm:h-[480px] md:max-w-[455px] md:h-[600px] mx-auto overflow-hidden rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-700">
                 <img
                   src="https://s3-alpha-sig.figma.com/img/879f/2437/57e2ef18893781cb5fc1db455bb38206?Expires=1749427200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=AE8cvbfIMWjC1g0FZMG-O~6HrxtoPOST8dbmu~SF~wNYiaA86u-dRWxD1Ggnup3lQdye5MdmaWTtcONEXqUPJ0UmliyCPvCnxfPmahwooq4xR1ODgmW7xMj7YbqrxAyVri-6hLATiSpHmJhcpp7sZQH2Nes9Sw6eHqOBsi7NBAEJbPtXl~DmKw-wmUBgFK1j2Ri0ELemuKnqmsLbcTLgKv1pSodds~Ont6NgCbxDsWuL9WmxVyTfTRTw-BKymTlNIQPwb3h08HNzfmsUMor1xCONIaRkOl1~i9BYTCoOJ25PoKetA8e3GMq0WIzq8ZzBRFptbzM2XPcBxI7XL9aNuA__"
                   alt="Racan AI Feature"

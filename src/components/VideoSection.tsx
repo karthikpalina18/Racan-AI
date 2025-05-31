@@ -4,7 +4,7 @@ const VideoSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
-    <section className="relative w-full h-[80vh] md:h-screen overflow-hidden  ">
+    <section className="relative w-full h-[80vh] md:h-[70vh] lg:h-[75vh] overflow-hidden">
       <video
         ref={videoRef}
         autoPlay
