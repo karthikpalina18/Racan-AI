@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <img 
-              src="https://i.postimg.cc/rsYBTFzm/image-41.png" 
+              src="https://i.postimg.cc/CMnkxnGs/image-1.png" 
               alt="Racan Logo" 
               className="w-32 mb-4"
             />
