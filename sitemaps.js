@@ -8,7 +8,7 @@ sitemap.write({ url: '/about', changefreq: 'monthly', priority: 0.8 });
 sitemap.write({ url: '/contact', changefreq: 'monthly', priority: 0.7 });
 
 sitemap.end();
-
+ 
 streamToPromise(sitemap)
   .then(data => {
     createWriteStream('./public/sitemap.xml').end(data);
