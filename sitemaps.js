@@ -12,4 +12,4 @@ sitemap.end();
 streamToPromise(sitemap)
   .then(data => {
     createWriteStream('./public/sitemap.xml').end(data);
-  });
+  }); 
