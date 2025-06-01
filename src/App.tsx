@@ -21,4 +21,13 @@ function App() {
   );
 }
 
+export const metadata = {
+  title: 'Racan AI Fashion Assistant',
+  description: 'Experience the future of fashion with AI recommendations.',
+  openGraph: {
+    images: ['https://racan-ai.vercel.app/logo.png'],
+  },
+};
+
+
 export default App;
