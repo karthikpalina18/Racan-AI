@@ -133,7 +133,7 @@ const Features: React.FC = () => {
               className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] object-cover rounded-lg shadow-lg"
             />
           </div>
-          <div className={`w-full lg:w-2/3 text-center lg:text-right px-4 lg:mr-[2rem] mt-[10px] transform transition-all duration-800 delay-300 ${
+          <div className={`w-full lg:w-2/3 text-center lg:text-right px-4 lg:mr-[2rem] -mt-[46px] lg:mt-[-50px] transform transition-all duration-800 delay-300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 mb-4 hover:text-[#004AAD] transition-colors duration-300">
