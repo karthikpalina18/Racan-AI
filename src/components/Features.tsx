@@ -251,7 +251,7 @@ const Features: React.FC = () => {
         <div 
           ref={sectionRef}
           className={`mt-12 w-full flex flex-col lg:flex-row items-center px-4 lg:px-8 py-8 lg:py-12 gap-12 lg:gap-2 transition-all duration-1000 demo-container ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            isVisible ? '' : ''
           }`}
           style={{backgroundColor: '#F4FFD1'}}
         >
@@ -268,7 +268,7 @@ const Features: React.FC = () => {
           <div className={`w-full lg:w-2/3 text-center lg:text-right px-4 lg:mr-[2rem] -mt-[46px] lg:mt-[-50px] transform transition-all duration-800 delay-300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 mb-4 hover:text-[#004AAD] transition-all duration-300 hover:scale-105 pulse-glow">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 mb-4  transition-all duration-300 hover:scale-105">
               Here is Racan Ai Demo
             </h3>
             <button className="bg-[#004AAD] text-white px-6 py-3 text-sm md:text-base hover:bg-[#973cff] mt-[0px] lg:mt-[20px] transition-all duration-300 lg:mr-[12rem] transform hover:scale-105 hover:shadow-lg active:scale-95 hover:-translate-y-1 button-morph" style={{borderRadius: '0px'}}>
@@ -295,13 +295,13 @@ const Features: React.FC = () => {
             }`}>
               <button
                 onClick={prevSlide}
-                className="w-10 h-10 rounded-full border border-black border-opacity-[0.30] flex items-center justify-center hover:bg-[#F4FFD1] hover:border-opacity-80 transition-all duration-300 hover:scale-110 hover:shadow-md active:scale-95 morphing-button"
+                className="w-10 h-10 rounded-full border border-black border-opacity-[100] flex items-center justify-center hover:bg-[#F4FFD1] hover:border-opacity-80 transition-all duration-300 hover:scale-110 hover:shadow-md active:scale-95 morphing-button"
               >
                 <ChevronLeft className="w-4 h-4 text-gray-600 transition-transform duration-300 hover:scale-110" />
               </button>
               <button
                 onClick={nextSlide}
-                className="w-10 h-10 rounded-full border border-black border-opacity-[0.30] flex items-center justify-center hover:bg-[#F4FFD1] hover:border-opacity-80 transition-all duration-300 hover:scale-110 hover:shadow-md active:scale-95 morphing-button"
+                className="w-10 h-10 rounded-full border border-black border-opacity-[100] flex items-center justify-center hover:bg-[#F4FFD1] hover:border-opacity-80 transition-all duration-300 hover:scale-110 hover:shadow-md active:scale-95 morphing-button"
               >
                 <ChevronRight className="w-4 h-4 text-gray-600 transition-transform duration-300 hover:scale-110" />
               </button>
@@ -371,11 +371,6 @@ const Features: React.FC = () => {
           100% { transform: translateX(100%); }
         }
 
-        @keyframes pulse-glow {
-          0%, 100% { text-shadow: 0 0 5px rgba(0, 74, 173, 0.3); }
-          50% { text-shadow: 0 0 20px rgba(0, 74, 173, 0.6), 0 0 30px rgba(0, 74, 173, 0.4); }
-        }
-
         @keyframes morph {
           0%, 100% { border-radius: 50%; }
           50% { border-radius: 20%; }
@@ -436,10 +431,6 @@ const Features: React.FC = () => {
 
         .feature-card:hover {
           box-shadow: 0 20px 40px rgba(0, 74, 173, 0.15);
-        }
-
-        .pulse-glow {
-          animation: pulse-glow 3s infinite;
         }
 
         .morphing-button:hover {
