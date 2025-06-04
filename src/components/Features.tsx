@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const Features: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,9 +9,25 @@ const Features: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [showCookiePopup, setShowCookiePopup] = useState(true);
+  const [showCustomizeModal, setShowCustomizeModal] = useState(false);
+  const [cookiePreferences, setCookiePreferences] = useState({
+    necessary: true, // Always true and can't be changed
+    analytics: false,
+    marketing: false,
+    personalization: false
+  });
   const sectionRef = useRef<HTMLDivElement>(null);
   const featuresRef = useRef<HTMLDivElement>(null);
   const newsRef = useRef<HTMLDivElement>(null);
+
+  // Check localStorage on component mount
+  useEffect(() => {
+    const savedPreferences = localStorage.getItem('cookiePreferences');
+    if (savedPreferences) {
+      setCookiePreferences(JSON.parse(savedPreferences));
+      setShowCookiePopup(false);
+    }
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -52,14 +68,6 @@ const Features: React.FC = () => {
       if (featuresRef.current) observer.unobserve(featuresRef.current);
       if (newsRef.current) observer.unobserve(newsRef.current);
     };
-  }, []);
-
-  // Check localStorage on component mount to see if cookie choice was made
-  useEffect(() => {
-    const cookieChoice = localStorage.getItem('cookieChoice');
-    if (cookieChoice) {
-      setShowCookiePopup(false);
-    }
   }, []);
 
   const newsItems = [
@@ -119,18 +127,45 @@ const Features: React.FC = () => {
   };
 
   const handleAcceptCookies = () => {
-    localStorage.setItem('cookieChoice', 'accept');
+    const preferences = {
+      necessary: true,
+      analytics: true,
+      marketing: true,
+      personalization: true
+    };
+    localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
+    setCookiePreferences(preferences);
     setShowCookiePopup(false);
   };
 
   const handleRejectCookies = () => {
-    localStorage.setItem('cookieChoice', 'reject');
+    const preferences = {
+      necessary: true,
+      analytics: false,
+      marketing: false,
+      personalization: false
+    };
+    localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
+    setCookiePreferences(preferences);
     setShowCookiePopup(false);
   };
 
   const handleCustomizeCookies = () => {
-    localStorage.setItem('cookieChoice', 'customize');
+    setShowCustomizeModal(true);
     setShowCookiePopup(false);
+  };
+
+  const handleSavePreferences = () => {
+    localStorage.setItem('cookiePreferences', JSON.stringify(cookiePreferences));
+    setShowCustomizeModal(false);
+  };
+
+  const handleTogglePreference = (key: keyof typeof cookiePreferences) => {
+    if (key === 'necessary') return; // Cannot toggle necessary cookies
+    setCookiePreferences(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
   };
 
   return (
@@ -569,8 +604,9 @@ const Features: React.FC = () => {
           
         </div>
       </div>
-   {/* Cookie Popup */}
-   {showCookiePopup && (
+
+      {/* Cookie Popup */}
+      {showCookiePopup && (
         <div className="fixed bottom-0 left-0 right-0 md:bottom-4 md:left-auto md:right-4 md:max-w-md bg-black text-white p-4 md:rounded-lg shadow-lg z-50 border border-gray-700 cookie-popup">
           <h3 className="text-lg font-semibold mb-2">Cookie settings</h3>
           <p className="text-sm text-gray-300 mb-4">
@@ -597,6 +633,106 @@ const Features: React.FC = () => {
               >
                 Accept All Cookies
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Cookie Customize Modal */}
+      {showCustomizeModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-xl font-semibold text-gray-900">Cookie Preferences</h3>
+                <button
+                  onClick={() => setShowCustomizeModal(false)}
+                  className="text-gray-400 hover:text-gray-500 transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              
+              <div className="space-y-4">
+                {/* Necessary Cookies */}
+                <div className="flex items-center justify-between py-2 border-b">
+                  <div>
+                    <h4 className="font-medium text-gray-900">Necessary Cookies</h4>
+                    <p className="text-sm text-gray-500">Required for the website to function properly</p>
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="checkbox"
+                      checked={true}
+                      disabled
+                      className="h-4 w-4 rounded border-gray-300 text-[#004AAD] focus:ring-[#004AAD] cursor-not-allowed opacity-50"
+                    />
+                  </div>
+                </div>
+
+                {/* Analytics Cookies */}
+                <div className="flex items-center justify-between py-2 border-b">
+                  <div>
+                    <h4 className="font-medium text-gray-900">Analytics Cookies</h4>
+                    <p className="text-sm text-gray-500">Help us improve our website by collecting usage information</p>
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="checkbox"
+                      checked={cookiePreferences.analytics}
+                      onChange={() => handleTogglePreference('analytics')}
+                      className="h-4 w-4 rounded border-gray-300 text-[#004AAD] focus:ring-[#004AAD] cursor-pointer"
+                    />
+                  </div>
+                </div>
+
+                {/* Marketing Cookies */}
+                <div className="flex items-center justify-between py-2 border-b">
+                  <div>
+                    <h4 className="font-medium text-gray-900">Marketing Cookies</h4>
+                    <p className="text-sm text-gray-500">Used to deliver relevant ads and marketing campaigns</p>
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="checkbox"
+                      checked={cookiePreferences.marketing}
+                      onChange={() => handleTogglePreference('marketing')}
+                      className="h-4 w-4 rounded border-gray-300 text-[#004AAD] focus:ring-[#004AAD] cursor-pointer"
+                    />
+                  </div>
+                </div>
+
+                {/* Personalization Cookies */}
+                <div className="flex items-center justify-between py-2 border-b">
+                  <div>
+                    <h4 className="font-medium text-gray-900">Personalization Cookies</h4>
+                    <p className="text-sm text-gray-500">Remember your preferences and provide personalized features</p>
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="checkbox"
+                      checked={cookiePreferences.personalization}
+                      onChange={() => handleTogglePreference('personalization')}
+                      className="h-4 w-4 rounded border-gray-300 text-[#004AAD] focus:ring-[#004AAD] cursor-pointer"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 flex justify-end gap-3">
+                <button
+                  onClick={() => setShowCustomizeModal(false)}
+                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-500 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleSavePreferences}
+                  className="px-4 py-2 bg-[#004AAD] text-white text-sm font-medium rounded hover:bg-[#973cff] transition-colors"
+                >
+                  Save Preferences
+                </button>
+              </div>
             </div>
           </div>
         </div>
