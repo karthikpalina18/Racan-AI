@@ -8,6 +8,7 @@ const Features: React.FC = () => {
   const [newsVisible, setNewsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [showCookiePopup, setShowCookiePopup] = useState(true);
   const sectionRef = useRef<HTMLDivElement>(null);
   const featuresRef = useRef<HTMLDivElement>(null);
   const newsRef = useRef<HTMLDivElement>(null);
@@ -51,6 +52,14 @@ const Features: React.FC = () => {
       if (featuresRef.current) observer.unobserve(featuresRef.current);
       if (newsRef.current) observer.unobserve(newsRef.current);
     };
+  }, []);
+
+  // Check localStorage on component mount to see if cookie choice was made
+  useEffect(() => {
+    const cookieChoice = localStorage.getItem('cookieChoice');
+    if (cookieChoice) {
+      setShowCookiePopup(false);
+    }
   }, []);
 
   const newsItems = [
@@ -107,6 +116,21 @@ const Features: React.FC = () => {
         behavior: 'smooth'
       });
     }
+  };
+
+  const handleAcceptCookies = () => {
+    localStorage.setItem('cookieChoice', 'accept');
+    setShowCookiePopup(false);
+  };
+
+  const handleRejectCookies = () => {
+    localStorage.setItem('cookieChoice', 'reject');
+    setShowCookiePopup(false);
+  };
+
+  const handleCustomizeCookies = () => {
+    localStorage.setItem('cookieChoice', 'customize');
+    setShowCookiePopup(false);
   };
 
   return (
@@ -545,6 +569,38 @@ const Features: React.FC = () => {
           
         </div>
       </div>
+   {/* Cookie Popup */}
+   {showCookiePopup && (
+        <div className="fixed bottom-0 left-0 right-0 md:bottom-4 md:left-auto md:right-4 md:max-w-md bg-black text-white p-4 md:rounded-lg shadow-lg z-50 border border-gray-700 cookie-popup">
+          <h3 className="text-lg font-semibold mb-2">Cookie settings</h3>
+          <p className="text-sm text-gray-300 mb-4">
+            We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services to you. You can read our Cookie Policy{' '}
+            <span className="underline cursor-pointer">here</span>.
+          </p>
+          <div className="space-y-2">
+            <button
+              onClick={handleCustomizeCookies}
+              className="w-full py-2 px-4 border border-gray-600 text-white rounded hover:bg-gray-800 transition-colors duration-300 text-sm"
+            >
+              Customize Cookie Settings
+            </button>
+            <div className="flex flex-col sm:flex-row gap-2">
+              <button
+                onClick={handleRejectCookies}
+                className="flex-1 py-2 px-4 bg-transparent border border-gray-600 text-white rounded hover:bg-gray-800 transition-colors duration-300 text-sm"
+              >
+                Reject All Cookies
+              </button>
+              <button
+                onClick={handleAcceptCookies}
+                className="flex-1 py-2 px-4 bg-white text-black rounded hover:bg-gray-200 transition-colors duration-300 text-sm font-medium"
+              >
+                Accept All Cookies
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

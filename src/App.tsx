@@ -6,7 +6,7 @@ import About from './components/About';
 import Features from './components/Features';
 import Products from './components/Products';
 import Footer from './components/Footer';
-import { Analytics } from "@vercel/analytics/next";
+
 
 function App() {
   return (
