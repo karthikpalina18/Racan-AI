@@ -607,7 +607,7 @@ const Features: React.FC = () => {
 
       {/* Cookie Popup */}
       {showCookiePopup && (
-        <div className="fixed bottom-0 left-0 right-0 md:bottom-4 md:left-auto md:right-4 md:max-w-md bg-black text-white p-4 md:rounded-lg shadow-lg z-50 border border-gray-700 cookie-popup">
+        <div className="fixed bottom-0 left-0 right-0 md:bottom-4 md:left-auto md:right-4 md:max-w-md bg-black text-white p-4 md:rounded shadow-lg z-50 border border-gray-700 cookie-popup">
           <h3 className="text-lg font-semibold mb-2">Cookie settings</h3>
           <p className="text-sm text-gray-300 mb-4">
             We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services to you. You can read our Cookie Policy{' '}
