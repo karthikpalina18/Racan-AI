@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,12 +71,12 @@ const Navbar: React.FC = () => {
             >
               About us
             </a>
-            <a
-              href="#"
+            <Link
+              to="/signup"
               className="bg-black text-white px-6 py-2 rounded-full hover:bg-[#d70153] transition-all duration-300"
             >
               Try Racan
-            </a>
+            </Link>
           </nav>
 
           <button
@@ -134,13 +135,13 @@ const Navbar: React.FC = () => {
           >
             About us
           </a>
-          <a
-            href="#"
+          <Link
+            to="/signup"
             className="mt-8 bg-black text-white px-6 py-3 rounded-full hover:bg-[#d70153] transition-all duration-300"
             onClick={() => setIsMenuOpen(false)}
           >
             Try Racan
-          </a>
+          </Link>
         </nav>
       </div>
     </>

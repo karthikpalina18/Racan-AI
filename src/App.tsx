@@ -1,34 +1,16 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import VideoSection from './components/VideoSection';
-import About from './components/About';
-import Features from './components/Features';
-import Products from './components/Products';
-import Footer from './components/Footer';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Signup from './components/Signup';
 
 function App() {
   return (
-    <div className="relative overflow-x-hidden">
-      <Navbar />
-      <Hero />
-      <VideoSection />
-      <About />
-      <Features />
-      <Products />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </Router>
   );
 }
-
-export const metadata = {
-  title: 'Racan AI Fashion Assistant',
-  description: 'Experience the future of fashion with AI recommendations.',
-  openGraph: {
-    images: ['https://racan-ai.vercel.app/logo.png'],
-  },
-};
-
 
 export default App;

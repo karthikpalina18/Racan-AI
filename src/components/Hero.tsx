@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Hero() {
   return (
@@ -45,12 +46,12 @@ function Hero() {
             <p className="font-mono text-gray-800 text-[16px] sm:text-[17px] lg:text-[18px] mt-6 max-w-xl animate-fade-in-up animation-delay-300">
             Experience the future of fashion with AI-powered Fashion assistant Ecommerce,personalized recommendations that match your unique taste.
             </p>
-            <a
-              href="#"
+            <Link
+              to="/signup"
               className="inline-block bg-[#ff3366] text-white px-8 py-3 rounded-full text-base lg:text-lg hover:bg-[#d70153] hover:scale-105 hover:shadow-lg transition-all duration-300 mt-8 w-fit animate-fade-in-up animation-delay-600"
             >
               Try Racan
-            </a>
+            </Link>
           </div>
           <div className="w-full lg:w-1/2 hidden lg:flex justify-center">
             <div className="relative w-full max-w-[400px] lg:w-[466.89px] h-[350px] sm:h-[400px] lg:h-[452.12px] group">
