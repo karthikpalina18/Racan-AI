@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Hero() {
   return (
-    <>
+    <> 
       <style>{`
         @keyframes fadeInUp {
           from {
