@@ -128,7 +128,7 @@ const Navbar: React.FC = () => {
           >
             Products
           </a>
-          <a
+          <a 
             href="#about"
             className="text-xl hover:text-[#973cff] transition-colors duration-300"
             onClick={() => setIsMenuOpen(false)}
