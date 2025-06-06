@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Lock, User, ArrowLeft } from 'lucide-react';
 
 function Signup() {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
+    email: '', 
     password: '',
   });
-   
+  
+  const [isPageLoading, setIsPageLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate page loading time
+    const timer = setTimeout(() => {
+      setIsPageLoading(false);
+    }, 2000); // Show loading for 2 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,6 +27,72 @@ function Signup() {
   const handleGoBack = () => {
     window.history.back();
   };
+
+  // Loading screen
+  if (isPageLoading) {
+    return (
+      <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          {/* Morphing Blob Animation */}
+          <div className="relative w-32 h-32 mx-auto">
+            {/* Main morphing blob */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-300 via-pink-300 to-blue-300 animate-pulse blur-sm opacity-90"></div>
+            <div 
+              className="absolute inset-2 rounded-full bg-gradient-to-br from-violet-400 via-fuchsia-400 to-cyan-300 animate-spin blur-md"
+              style={{
+                animation: 'morph 3s ease-in-out infinite, spin 8s linear infinite',
+                filter: 'blur(8px)',
+              }}
+            ></div>
+            <div 
+              className="absolute inset-4 rounded-full bg-gradient-to-tr from-pink-200 via-purple-200 to-cyan-200"
+              style={{
+                animation: 'morph2 4s ease-in-out infinite reverse',
+                filter: 'blur(4px)',
+              }}
+            ></div>
+            <div 
+              className="absolute inset-8 rounded-full bg-gradient-to-bl from-blue-100 via-purple-100 to-pink-100"
+              style={{
+                animation: 'morph3 2.5s ease-in-out infinite',
+                filter: 'blur(2px)',
+              }}
+            ></div>
+          </div>
+        </div>
+        
+        {/* Custom CSS animations */}
+        <style jsx>{`
+          @keyframes morph {
+            0%, 100% {
+              border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            }
+            50% {
+              border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+            }
+          }
+          
+          @keyframes morph2 {
+            0%, 100% {
+              border-radius: 40% 60% 60% 40% / 70% 30% 60% 40%;
+            }
+            50% {
+              border-radius: 70% 30% 40% 60% / 40% 70% 30% 60%;
+            }
+          }
+          
+          @keyframes morph3 {
+            0%, 100% {
+              border-radius: 50% 50% 30% 70% / 30% 70% 70% 30%;
+            }
+            50% {
+              border-radius: 70% 30% 50% 50% / 60% 40% 40% 60%;
+            }
+          }
+        `}</style>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen w-full flex">
@@ -101,7 +177,14 @@ function Signup() {
           </div>
           <div className="rounded-2xl overflow-hidden h-[calc(50vh-3rem)]">
             <img 
-              src="https://images.pexels.com/photos/2866119/pexels-photo-2866119.jpeg" 
+              src="https://i.pinimg.com/736x/94/d2/5f/94d25f091a8fd11ab557d02d4ac03979.jpg" 
+              alt="Fashion" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="rounded-2xl overflow-hidden h-[calc(50vh-3rem)]">
+            <img 
+              src="https://i.pinimg.com/736x/65/dc/8e/65dc8e24c28415fba29f1dff90c9d970.jpg" 
               alt="Fashion" 
               className="w-full h-full object-cover"
             />
@@ -113,17 +196,10 @@ function Signup() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="rounded-2xl overflow-hidden h-[calc(50vh-3rem)]">
-            <img 
-              src="https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg" 
-              alt="Fashion" 
-              className="w-full h-full object-cover"
-            />
-          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default Signup; 
+export default Signup;
