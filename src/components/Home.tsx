@@ -6,7 +6,6 @@ import About from './About';
 import Features from './Features';
 import Products from './Products';
 import Footer from './Footer';
-import Login from './Login';
 import Signup from './Signup';
 
  
