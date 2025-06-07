@@ -210,6 +210,7 @@ function Login() {
                     </div>
                   </div>
 
+                  <link rel="stylesheet" href="./Signup" />
                   <button
                     type="submit"
                     onClick={handleSubmit}
@@ -218,6 +219,8 @@ function Login() {
                   >
                     Login 
                   </button>
+
+                  <link/>
 
                   <button
                     type="button"

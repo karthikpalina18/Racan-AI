@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -38,6 +37,15 @@ const Navbar: React.FC = () => {
     };
   }, [isMenuOpen]);
 
+  const handleNavigation = (path) => {
+    // Replace with your navigation logic
+    console.log(`Navigate to: ${path}`);
+    // For React Router: navigate(path);
+    // For basic navigation: window.location.href = path;
+    window.location.href = path; // Actual navigation
+    setIsMenuOpen(false);
+  };
+
   return (
     <>
       <header
@@ -71,12 +79,12 @@ const Navbar: React.FC = () => {
             >
               About us
             </a>
-            <Link
-              to="/signup"
+            <button
+              onClick={() => handleNavigation('/Login')}
               className="bg-black text-white px-6 py-2 rounded-full hover:bg-[#d70153] transition-all duration-300"
             >
               Try Racan
-            </Link>
+            </button>
           </nav>
 
           <button
@@ -135,15 +143,15 @@ const Navbar: React.FC = () => {
           >
             About us
           </a>
-          <Link 
-            to="/Login"
+
+          <button 
+            onClick={() => handleNavigation('/Login')}
             className="mt-8 bg-black text-white px-6 py-3 rounded-full hover:bg-[#d70153] transition-all duration-300"
-            onClick={() => setIsMenuOpen(false)}
           >
             Try Racan
-          </Link>
+          </button>
         </nav>
-      </div>
+      </div> 
     </> 
   );
 };
