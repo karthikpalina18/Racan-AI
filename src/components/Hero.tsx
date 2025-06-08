@@ -47,7 +47,7 @@ function Hero() {
             Experience the future of fashion with AI-powered Fashion assistant Ecommerce,personalized recommendations that match your unique taste.
             </p>
             <Link
-              to="/Login"
+              to="https://chat-with-racan.vercel.app"
               className="inline-block bg-[#ff3366] text-white px-8 py-3 rounded-full text-base lg:text-lg hover:bg-[#d70153] hover:scale-105 hover:shadow-lg transition-all duration-300 mt-8 w-fit animate-fade-in-up animation-delay-600"
             >
               Try Racan
