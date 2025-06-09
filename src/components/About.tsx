@@ -157,7 +157,7 @@ const About: React.FC = () => {
                   {/* Main Image */}
                   <div className="relative z-10 w-full h-full rounded-2xl overflow-hidden">
                     <img
-                      src="https://s3-alpha-sig.figma.com/img/879f/2437/57e2ef18893781cb5fc1db455bb38206?Expires=1749427200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=AE8cvbfIMWjC1g0FZMG-O~6HrxtoPOST8dbmu~SF~wNYiaA86u-dRWxD1Ggnup3lQdye5MdmaWTtcONEXqUPJ0UmliyCPvCnxfPmahwooq4xR1ODgmW7xMj7YbqrxAyVri-6hLATiSpHmJhcpp7sZQH2Nes9Sw6eHqOBsi7NBAEJbPtXl~DmKw-wmUBgFK1j2Ri0ELemuKnqmsLbcTLgKv1pSodds~Ont6NgCbxDsWuL9WmxVyTfTRTw-BKymTlNIQPwb3h08HNzfmsUMor1xCONIaRkOl1~i9BYTCoOJ25PoKetA8e3GMq0WIzq8ZzBRFptbzM2XPcBxI7XL9aNuA__"
+                      src="https://i.postimg.cc/jjp2L24q/Jacket-and-Cap-Style-Statement.png"
                       alt="Racan AI Feature"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
