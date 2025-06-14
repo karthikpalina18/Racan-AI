@@ -14,7 +14,8 @@ const VideoSection: React.FC = () => {
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source
-          src="https://v1.pinimg.com/videos/mc/720p/47/74/72/477472107a4ec6b9f3d60b4c32c84c1c.mp4"
+          src=
+          "https://scontent-lax3-2.cdninstagram.com/o1/v/t16/f2/m86/AQPebNT4ianwMC-DAr293zHQlqWt6-4GE__9i4UZ22o51dDPTvyU79ZP4-1isLobHDpXLwhhiVntrg5zqianxapgYHz71lVAySX1Chc.mp4?stp=dst-mp4&efg=eyJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSIsInZlbmNvZGVfdGFnIjoidnRzX3ZvZF91cmxnZW4uY2xpcHMuYzIuNzIwLmJhc2VsaW5lIn0&_nc_cat=106&vs=1104529804819052_2523585088&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC81MzQ1RDVFQzkwNDI4MkVGRUI3NTZERjA4QzMxNEI4MV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HT1NYUmg2YWJpVVktaFlLQVA1eGdGeldwWk10YnFfRUFBQUYVAgLIARIAKAAYABsAFQAAJo7FzJHHqZ1BFQIoAkMzLBdALhT987ZFohgSZGFzaF9iYXNlbGluZV8xX3YxEQB1%2Fgdl5p0BAA%3D%3D&ccb=9-4&oh=00_AfNOZ7w_4JH3wD8yt3bf1YQ5UM2UbiXoYFCMgdpkoEok5g&oe=684F7D51&_nc_sid=10d13b"
           type="video/mp4"
         />
         Your browser does not support the video tag.
