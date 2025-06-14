@@ -314,16 +314,18 @@ const Features: React.FC = () => {
           }`}
           style={{backgroundColor: '#F4FFD1'}}
         >
+          
           <div className="w-full lg:w-3/3 mb-8 lg:mb-0 transform transition-all duration-700">
-            <video 
-              src="https://v1.pinimg.com/videos/mc/expMp4/c4/3a/8e/c43a8e47b258e2642768c92bacf744ea_t1.mp4" 
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] object-cover rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] video-glow"
-            />
-          </div>
+  <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] video-glow overflow-hidden">
+    <iframe 
+      title="vimeo-player"
+      src="https://player.vimeo.com/video/1093285476?h=3e899faaff&autoplay=1&loop=1&muted=1&controls=0&background=1" 
+      frameBorder="0" 
+      allowFullScreen
+      className="absolute top-0 left-0 w-full h-full"
+    />
+  </div>
+</div>
           <div className={`w-full lg:w-2/3 text-center lg:text-right px-4 lg:mr-[2rem] -mt-[46px] lg:mt-[-50px] transform transition-all duration-800 delay-300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
