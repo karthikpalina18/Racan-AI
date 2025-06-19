@@ -31,13 +31,15 @@ function Hero() {
         }
       `}</style>
 
-      <section className="relative bg-white pt-10 mt-[80px] mb-[60px] lg:min-h-screen lg:pt-20 lg:mt-[50px] lg:mb-[10px] bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url(https://i.pinimg.com/736x/45/0f/9f/450f9fa40cba709542129b1d0d60247c.jpg)'}}>
+      <section className="relative bg-white pt-10 mt-[75px] mb-[0px] pb-[20px] lg:min-h-screen lg:pt-20 lg:mt-[50px] lg:mb-[10px] bg-cover bg-center bg-no-repeat" 
+      style={{backgroundImage: 
+      'url(https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/b5f129130689145.618a82f1c96b1.jpg)'}}>
         <div className="w-full flex flex-col lg:flex-row items-center justify-center mt-[15px] lg:mt-[30px] mb-[10px] lg:mb-[10px] px-4 lg:px-0 gap-5 lg:gap-[20px]">
           <div className="w-full lg:w-1/2 px-2 lg:px-20 lg:ml-[75px]  flex flex-col justify-center min-h-[400px] lg:min-h-[452px]">
-            <h1 className="text-[28px] sm:text-[30px] lg:text-[32px] text-gray-900 font-semibold leading-tight animate-fade-in-up">
+            <h1 className="text-[28px] sm:text-[30px] lg:text-[32px] text-gray-00 font-semibold leading-tight animate-fade-in-up">
               Redefine Your Style With Racan
               <br />
-              <span className="text-[#004AAD]">
+              <span className="text-[#ffffff]">
                 AI-powered assistant + Fashion
               </span>
               <br />
@@ -58,7 +60,7 @@ function Hero() {
               <img
                 src="https://i.pinimg.com/736x/1f/11/bf/1f11bfeb936f435b9e134f064154668e.jpg"
                 alt="Fashion AI"
-                className="w-full h-full object-cover rounded-[2px] transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl group-hover:brightness-110"
+                className="w-full h-full object-cover opacity-90 rounded-[10px] transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl group-hover:brightness-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[2px]"></div>
             </div>
